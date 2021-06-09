@@ -15,9 +15,6 @@ function PostModal(props) {
   const { setMsg } = useContext(HandleMsgToast);
   const [inputs, setInputs] = useState(initInputs);
   const [errors, setErrors] = useState({});
-  const longURLRef = useRef(null);
-
-  useEffect(() => longURLRef.current?.focus());
 
   const handleClose = () => {
     setIsPostModal(false);
@@ -102,7 +99,6 @@ function PostModal(props) {
                   onKeyPress={handleKeyPress}
                   value={inputs.longURL}
                   isInvalid={!!errors.longURL}
-                  ref={longURLRef}
                 />
                 <Form.Control.Feedback type='invalid'>{errors.longURL}</Form.Control.Feedback>
               </Col>

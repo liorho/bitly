@@ -22,6 +22,7 @@
   },
   "scripts": {
     "start": "node server.js",
+    "server": "nodemon server.js",
     "dev": "PORT=4001 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

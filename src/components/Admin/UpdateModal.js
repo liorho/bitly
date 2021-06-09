@@ -89,7 +89,7 @@ function UpdateModal(props) {
         <Form>
           <Form.Group>
             <Form.Row className='mb-2'>
-              <Form.Label column lg={2}>
+              <Form.Label column lg={4}>
                 Enter a New Short URL:
               </Form.Label>
               <Col>

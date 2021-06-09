@@ -1,6 +1,18 @@
 # Bitly
 **Because every decent app's name ends with a "ly" ;)**
 
+A small bitly-clone app
+
+*******************
+TODO:
+Upload to heroku - see how it work with redirect
+
+set ref to post Modal
+
+change readme link to heroku
+
+********************
+
 Demo: [Bitly](http://liorho.github.io/Lior-Hoshea-20-05-2020)
 
 
@@ -26,29 +38,39 @@ Note that the URLs given have to be real ones which start with 'http' or 'https'
 
 ## Running the project
 
-1. Clone the repo.
-2. Run `npm install`.
-3. Run `npm run dev`
-4. Navigate to `http://localhost:3000`.
+1. Clone the repository and navigate to root directory
+2. Run `npm install`
+3. Run `cp .env.sample .env` to create a `.env` file
+4. In the `.env` file you will need to set the `DB_URL` with a mongoDB connection string.
+5. Run `npm run server` (assuming you have `nodemon`, if not - run `npm start`)
+4. Run `npm run dev`
+5. Navigate to `http://localhost:4001`. This will get you automatically to the `admin` page.
 
 ## Screenshots
-### Home:
+### Admin: Main Page
 
-<img src="./assets/screen-shots/dark-home.png" alt="home page" width="80%" />
+<img src="./assets/admin-main.png" alt="admin main page" width="80%" />
 <br></br>
 
-### Favorites:
+### Admin: Adding new URL
 
-<img src="./assets/screen-shots/dark-fav.png" alt="favorites page" width="80%" />
+<img src="./assets/admin-post-url.png" alt="admin post url" width="80%" />
 <br></br>
 
-### Responsive:
+### Admin: Update URL
 
-<img src="./assets/screen-shots/light-responsive.png" alt="responsive" width="40%" />
+<img src="./assets/admin-update-url.png" alt="admin update url" width="80%" />
+
+</br>
+
+### Redirect: Default page (when the short URL is invalid)
+
+<img src="./assets/redirect.png" alt="admin update url" width="80%" />
 
 </br>
 
 ## Tech-stack
 1. React
 2. express
-3. React-Bootstrap
+3. mongoDB
+4. React-Bootstrap
