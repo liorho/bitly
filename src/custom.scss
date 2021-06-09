@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+#root {
+  height: 97vh;
+  margin: 0.5rem;
+  position: relative;
+}
+
+.msg-toast {
+  position: absolute;
+  bottom: 0;
+  left: 1rem;
+  background-color: white !important;
+  opacity: 1 !important;
+  z-index: 7000;
+}
+
+.post-btn {
+  position: fixed;
+  right: 2vw;
+  bottom: 2vw;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+@import 'node_modules/bootstrap/scss/bootstrap';

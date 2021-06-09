@@ -1,24 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { createContext } from 'react';
+import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
+
+import RedirectToURL from './components/RedirectToURL';
+import Admin from './components/Admin';
+import MsgToast from './components/common/MsgToast';
+import useMsg from './components/hooks/useMsg';
+
+export const HandleMsgToast = createContext(null);
 
 function App() {
+  const [{ isMsg, msg }, setMsg] = useMsg();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <HandleMsgToast.Provider value={{ setMsg, msg }}>
+        <Router>
+          <Switch>
+            <Route exact path='/redirect/:shortURL' component={RedirectToURL} />
+            <Route exact path='/admin' component={Admin} />
+            <Redirect to='/admin' component={Admin} />
+          </Switch>
+        </Router>
+      </HandleMsgToast.Provider>
+      <MsgToast isMsg={isMsg} msg={msg} />
+    </>
   );
 }
 
