@@ -5,7 +5,7 @@ function MsgToast(props) {
   return (
     <Toast className='msg-toast' show={isMsg}>
       <Toast.Header>
-        <strong className='mr-auto'>Bitly</strong>
+        <strong className='mr-auto'>Linkly</strong>
       </Toast.Header>
       <Toast.Body>{msg}</Toast.Body>
     </Toast>
