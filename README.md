@@ -15,7 +15,7 @@ Demo: [Linkly](https://linklly.herokuapp.com/)
 
 ## Features
 ### Admin: (default route `/admin`)
-1. Click on the `+` button to add a URL with a shortcut - note that the short URL need to be unique, and that there is a `Random Short URL` button to create one for you. Also be aware that the given URLs have to start with 'http' / 'https' / 'ftp' prefix protocol
+1. Click on the `+` button (bottom right-hand corner) to add a URL with a shortcut - note that the short URL need to be unique, and that there is a `Random Short URL` button to create one for you. Also be aware that the given URLs have to start with 'http' / 'https' / 'ftp' prefix protocol
 2. See a list of saved URLs with their short URLs, Date of issue and a `Clicks` column for the number of time that the specific URL was visited.
 3. Click on a URL from the list to edit and change the short URL or to delete that URL completely
 ### Redirect: (`/redirect/<ShortURL>`)

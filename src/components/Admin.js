@@ -34,6 +34,9 @@ function Admin() {
     <Container>
       <header className='text-center'>
         <h1>Linkly</h1>
+        <h5 className='text-center'>
+          Redirect to a URL by navigating to: <strong>{window.location.origin}/redirect/shortURL</strong>
+        </h5>
       </header>
 
       <PostBtn setModal={setModal} />

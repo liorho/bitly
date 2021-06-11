@@ -8,7 +8,6 @@ import { setErrorMsg } from '../../../utils';
 import { INIT_MODAL, MODAL_ERRORS } from '../../../constants';
 import { initInputs } from '../../../utils';
 
-import ModalHeader from './ModalHeader';
 import ModalInput from './ModalInput';
 import ModalButton from './ModalButton';
 
@@ -125,7 +124,7 @@ function ModalService(props) {
   return (
     <Modal size='lg' show={modal.isModal} onHide={handleClose}>
       <Modal.Header closeButton>
-        <ModalHeader text={modal.type === 'POST' ? 'Add a New URL' : updateValues.longURL} />
+        <Modal.Title>{modal.type === 'POST' ? 'Add a New URL' : updateValues.longURL}</Modal.Title>
       </Modal.Header>
       <Modal.Body>
         <Form>
