@@ -3,7 +3,8 @@ import { Container } from 'react-bootstrap';
 
 import SavedURLs from './Admin/SavedURLs/SavedURLs';
 import PostBtn from './Admin/PostBtn/PostBtn';
-import ModalService from './Admin/ModalService/ModalService';
+import PostModal from './Admin/Modals/PostModal';
+import UpdateModal from './Admin/Modals/UpdateModal';
 import Loader from './common/Loader';
 
 import { HandleMsgToast } from '../App';
@@ -35,7 +36,11 @@ function Admin() {
       <header className='text-center'>
         <h1>Linkly</h1>
         <h5 className='text-center'>
-          Redirect to a URL by navigating to: <strong>{window.location.origin}/redirect/shortURL</strong>
+          Redirect to a URL by navigating to:{' '}
+          <strong>
+            {window.location.origin}
+            {'/redirect/<shortURL>'}
+          </strong>
         </h5>
       </header>
 
@@ -43,7 +48,8 @@ function Admin() {
 
       {isLoading ? <Loader /> : <SavedURLs URLs={URLs} setIsLoading={setIsLoading} setUpdateValues={setUpdateValues} setModal={setModal} />}
 
-      {modal.isModal && <ModalService modal={modal} setModal={setModal} updateValues={updateValues} setURLs={setURLs} />}
+      {modal.isModal && modal.type === 'POST' && <PostModal modal={modal} setModal={setModal} setURLs={setURLs} />}
+      {modal.isModal && modal.type === 'UPDATE' && <UpdateModal modal={modal} setModal={setModal} setURLs={setURLs} updateValues={ updateValues}/>}
     </Container>
   );
 }

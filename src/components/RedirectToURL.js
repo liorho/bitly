@@ -38,7 +38,7 @@ function RedirectToURL(props) {
           <Container className='h-100 h1 d-flex flex-column justify-content-center'>
           <div>
             <div className='text-center'>Redirect to a Valid Short URL</div>
-            <div className='text-center'>Example: <strong>{window.location.origin}/redirect/shortURL</strong></div>
+            <div className='text-center'>Example: <strong>{window.location.origin}{"/redirect/<shortURL>"}</strong></div>
           </div>
         </Container>
       )}
