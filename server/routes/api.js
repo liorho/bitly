@@ -39,13 +39,8 @@ router.post('/', async (req, res) => {
     if (await URL.findOne({ shortURL })) {
       return res.status(409).send(msg.REPEATED_URL_ERROR);
     }
-    url = new URL({
-      shortURL,
-      longURL,
-      date: new Date(),
-      counter: 0,
-    });
-    await url.save();
+    newURL = new URL(req.body);
+    await newURL.save();
     res.status(200).send(msg.POST_SUCCESS);
   } catch (err) {
     console.error(err.message);

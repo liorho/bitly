@@ -4,7 +4,7 @@ import { Table } from 'react-bootstrap';
 import SavedURL from './SavedURL';
 
 function SavedURLs(props) {
-  const { URLs, setUpdateValues, setIsUpdateModal } = props;
+  const { URLs, setUpdateValues, setModal } = props;
 
   return (
     <Table striped bordered hover variant='dark'>
@@ -23,7 +23,7 @@ function SavedURLs(props) {
             key={URL.shortURL}
             URL={URL}
             index={i}
-            setIsUpdateModal={setIsUpdateModal}
+            setModal={setModal}
             setUpdateValues={setUpdateValues} />
         ))}
       </tbody>

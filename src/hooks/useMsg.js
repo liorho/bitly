@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const { MSG_TIMER } = require('../../constants');
+const { MSG_TIMER } = require('../constants');
 
 function useMsg() {
   const [msg, setMsg] = useState('');

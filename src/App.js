@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 
 import RedirectToURL from './components/RedirectToURL';
 import Admin from './components/Admin';
-import MsgToast from './components/common/MsgToast';
-import useMsg from './components/hooks/useMsg';
+import MsgToast from './components/MsgToast';
+import useMsg from './hooks/useMsg';
 
 export const HandleMsgToast = createContext(null);
 
@@ -22,7 +22,7 @@ function App() {
           </Switch>
         </Router>
       </HandleMsgToast.Provider>
-      <MsgToast isMsg={isMsg} msg={msg} />
+      {isMsg && <MsgToast isMsg={isMsg} msg={msg} />}
     </>
   );
 }

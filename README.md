@@ -1,23 +1,12 @@
-# Bitly
+# Linkly
 **Because every decent app's name ends with a "ly" ;)**
 
 A small bitly-clone app
 
-*******************
-TODO:
-Upload to heroku - see how it work with redirect
-
-set ref to post Modal
-
-change readme link to heroku
-
-********************
-
-Demo: [Bitly](http://liorho.github.io/Lior-Hoshea-20-05-2020)
-
+Demo: [Linkly](https://linklly.herokuapp.com/)
 
 ## Table Of Contents
-- [Bitly](#bitly)
+- [Linkly](#bitly)
   - [Table Of Contents](#table-of-contents)
   - [Features](#Features)
   - [Running the project](#running-the-project)
@@ -25,26 +14,23 @@ Demo: [Bitly](http://liorho.github.io/Lior-Hoshea-20-05-2020)
   - [Tech Stack](#tech-stack)
 
 ## Features
-1. Search for a city and get its current weather and a five day forecast
-2. Autocomplete cities search
-3. Show the weather in your current location by default
-4. Mark cities as favorites
-5. Choose a preferred theme (Dark/Light mode)
-6. Choose a preferred temperature unit (Celsius/Fahrenheit)
-7. Fully responsive
-8. Weather is Provided by [AccuWeather](https://developer.accuweather.com/).
+### Admin: (default route `/admin`)
+1. Click on the `+` button to add a URL with a shortcut - note that the short URL need to be unique, and that there is a `Random Short URL` button to create one for you. Also be aware that the given URLs have to start with 'http' / 'https' / 'ftp' prefix protocol
+2. See a list of saved URLs with their short URLs, Date of issue and a `Clicks` column for the number of time that the specific URL was visited.
+3. Click on a URL from the list to edit and change the short URL or to delete that URL completely
+### Redirect: (`/redirect/<ShortURL>`)
+1. Navigate to `http://localhost:4001/redirect/<ShortURL>`. Replace the `<ShortURL>` with a short URL that you've created as an admin - this will redirect you to the original URL and keep track of the number of times you used that short URL
 
-Note that the URLs given have to be real ones which start with 'http' or 'https'
 
 ## Running the project
 
 1. Clone the repository and navigate to root directory
 2. Run `npm install`
-3. Run `cp .env.sample .env` to create a `.env` file
-4. In the `.env` file you will need to set the `DB_URL` with a mongoDB connection string.
+3. Run `cp .env.sample .env` to create an `.env` file
+4. In the `.env` file you will need to set the `DB_URL` with a mongoDB connection string
 5. Run `npm run server` (assuming you have `nodemon`, if not - run `npm start`)
 4. Run `npm run dev`
-5. Navigate to `http://localhost:4001`. This will get you automatically to the `admin` page.
+5. Navigate to `http://localhost:4001`. This will get you automatically to the `admin` page
 
 ## Screenshots
 ### Admin: Main Page
@@ -63,7 +49,7 @@ Note that the URLs given have to be real ones which start with 'http' or 'https'
 
 </br>
 
-### Redirect: Default page (when the short URL is invalid)
+### Redirect: Default page (if the short URL is invalid)
 
 <img src="./assets/redirect.png" alt="admin update url" width="80%" />
 
@@ -71,6 +57,6 @@ Note that the URLs given have to be real ones which start with 'http' or 'https'
 
 ## Tech-stack
 1. React
-2. express
-3. mongoDB
+2. Express
+3. MongoDB
 4. React-Bootstrap

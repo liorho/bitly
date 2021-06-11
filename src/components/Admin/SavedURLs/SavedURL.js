@@ -1,12 +1,12 @@
 import React from 'react';
-import { formatDate } from '../../utils';
+import { formatDate } from '../../../utils';
 
 function SavedURL(props) {
-  const { URL, index, setIsUpdateModal, setUpdateValues } = props;
+  const { URL, index, setModal, setUpdateValues } = props;
   const { longURL, shortURL, counter, date } = URL;
 
   const handleUpdate = () => {
-    setIsUpdateModal(true);
+    setModal({isModal: true, type: "UPDATE"});
     setUpdateValues({ shortURL, longURL });
   };
 
