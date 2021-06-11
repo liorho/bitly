@@ -23,14 +23,14 @@ app.use(express.urlencoded({ extended: false }));
 
 if (NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'build')));
-  app.use(express.static(path.join(__dirname, 'node_modules')));
+  // app.use(express.static(path.join(__dirname, 'node_modules')));
 }
 
 app.use('/api', api);
 
 if (NODE_ENV === 'production') {
   app.get('*', function (req, res) {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
   });
 }
 
